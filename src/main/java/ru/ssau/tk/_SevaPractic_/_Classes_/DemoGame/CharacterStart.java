@@ -11,7 +11,7 @@ public class CharacterStart {
         System.out.println("Your name is:");
         System.out.println(Name);
         System.out.println("Please set your stats");
-        for (points = 6; points > 0; ) {
+        for (points = 6; points > 0; ) {   //распределяет очки по трём характеристикам
             System.out.print("points:  ");
             System.out.println(points);
             System.out.print("power:  ");
@@ -34,8 +34,9 @@ public class CharacterStart {
                 points--;
             }
         }
+
         String head1 = "(^_^)", head2 = " (._.)", head3 = "(^ . ^)", body1 = " |(|)| ", body2 = "|(||)|", body3 = "|(.)|", legs1 = "_||_", legs2 = " .||.", legs3 = " ,||,";
-        System.out.println("Choose your look");
+        System.out.println("Choose your look");     //выбор внешности персонажа
         System.out.print(head1);
         System.out.print(" ");
         System.out.print(head2);
@@ -123,5 +124,6 @@ public class CharacterStart {
         if (l == 3){
             System.out.println(legs3);
         }
+
     }
 }
