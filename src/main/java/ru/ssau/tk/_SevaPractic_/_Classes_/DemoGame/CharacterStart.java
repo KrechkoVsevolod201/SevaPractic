@@ -59,37 +59,37 @@ public class CharacterStart {
         int h1 = 1, h2 = 2, h3 = 3, b1 = 1, b2 = 2, b3 = 3, l1 = 1, l2 = 2, l3 = 3, h, b, l;
         h = in.nextInt();
         if (h == 1){
-            System.out.print(head1);
+            System.out.println(head1);
         }
         if (h == 2){
-            System.out.print(head2);
+            System.out.println(head2);
         }
         if (h == 3){
-            System.out.print(head3);
+            System.out.println(head3);
         }
 
         System.out.println("Choose your body");
         b = in.nextInt();
         if (b == 1){
-            System.out.print(body1);
+            System.out.println(body1);
         }
         if (b == 2){
-            System.out.print(body2);
+            System.out.println(body2);
         }
         if (b == 3){
-            System.out.print(body3);
+            System.out.println(body3);
         }
 
         System.out.println("Choose your legs");
         l = in.nextInt();
         if (l == 1){
-            System.out.print(legs1);
+            System.out.println(legs1);
         }
         if (l == 2){
-            System.out.print(legs2);
+            System.out.println(legs2);
         }
         if (l == 3){
-            System.out.print(legs3);
+            System.out.println(legs3);
         }
 
         System.out.println("Your body is");
