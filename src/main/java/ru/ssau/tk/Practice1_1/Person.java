@@ -1,9 +1,7 @@
 package ru.ssau.tk.Practice1_1;
 
 
-
 public class Person {
-
 
 
     private String firstName;
@@ -13,8 +11,7 @@ public class Person {
     private int passportId;
 
 
-
-    public Person(String firstName, String lastName, int passportId){
+    public Person(String firstName, String lastName, int passportId) {
 
         this.firstName = firstName;
 
@@ -24,7 +21,7 @@ public class Person {
 
     }
 
-    public String getfirstName () {
+    public String getfirstName() {
 
         System.out.println(firstName);
 
@@ -33,40 +30,35 @@ public class Person {
     }
 
 
-
-    public void setfirstName (String firstName){
+    public void setfirstName(String firstName) {
 
         this.firstName = firstName;
 
     }
 
 
-
-    public String getlastName () {
+    public String getlastName() {
 
         return lastName;
 
     }
 
 
-
-    public void setlastName (String lastName){
+    public void setlastName(String lastName) {
 
         this.lastName = lastName;
 
     }
 
 
-
-    public int getpassportId () {
+    public int getpassportId() {
 
         return passportId;
 
     }
 
 
-
-    public void setpassportId ( int passportId){
+    public void setpassportId(int passportId) {
 
         this.passportId = passportId;
 
