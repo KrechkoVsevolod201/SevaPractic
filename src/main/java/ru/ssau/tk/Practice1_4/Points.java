@@ -19,14 +19,14 @@ public class Points {
     public static Point divide(Point per1, Point per2){
         return new Point(per1.x / per2.x, per1.y / per2.y, per1.z / per2.z);
     }
-    public static Point enlarge(Point peremennaya,double c){
-        return new Point(peremennaya.x*c,peremennaya.y*c,peremennaya.z*c);
+    public static Point enlarge(Point variableNumber,double c){
+        return new Point(variableNumber.x*c,variableNumber.y*c,variableNumber.z*c);
     }
-    static Point opposite(Point peremennaya){
-        return new Point(peremennaya.x*-1,peremennaya.y*-1,peremennaya.z*-1);
+    static Point opposite(Point variableNumber){
+        return new Point(variableNumber.x*-1,variableNumber.y*-1,variableNumber.z*-1);
     }
-    static Point inverse(Point peremennaya){
-        return new Point(1/peremennaya.x, 1/peremennaya.y, 1/peremennaya.z);
+    static Point inverse(Point variableNumber){
+        return new Point(1/variableNumber.x, 1/variableNumber.y, 1/variableNumber.z);
     }
     public static double scalarProduct(Point per1, Point per2) {
         return per1.x * per2.x + per1.y * per2.y + per1.z * per2.z;
