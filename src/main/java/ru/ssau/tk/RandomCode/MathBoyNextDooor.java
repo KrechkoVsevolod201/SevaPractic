@@ -1,6 +1,6 @@
 package ru.ssau.tk.RandomCode;
 
-public class MathBoyNextDooor {
+public abstract class MathBoyNextDooor implements MathFunction {
     //делаю тестики
 
     private double x, y, z;
@@ -46,14 +46,6 @@ public class MathBoyNextDooor {
 
     public double getZ() {
         return z;
-    }
-
-    public double  FunctionSqr (double x){
-        return (x * x);
-    }
-
-    public double FunctionSqrt (double x){
-        return (Math.sqrt(x));
     }
 
     public double FunctionCos (double x){

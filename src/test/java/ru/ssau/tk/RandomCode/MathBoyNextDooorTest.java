@@ -4,12 +4,21 @@ import static org.testng.Assert.*;
 
 public class MathBoyNextDooorTest {
 
+    private final double PlusInf = Double.POSITIVE_INFINITY;
+    private final double MinusInf = Double.NEGATIVE_INFINITY;
+    private final double NaN = Double.NaN;
+    private static final double delta = 0.001;
+
+    MathBoyNextDooor testFunctionSqr = new FunctionSqr();
+
     @org.testng.annotations.Test
     public void testSetX() {
+
     }
 
     @org.testng.annotations.Test
     public void testSetY() {
+        assertEquals(1, 1);
     }
 
     @org.testng.annotations.Test
@@ -30,6 +39,7 @@ public class MathBoyNextDooorTest {
 
     @org.testng.annotations.Test
     public void testFunctionSqr() {
+        assertEquals(testFunctionSqr.apply(-2.0), 4.0,DELTA);
     }
 
     @org.testng.annotations.Test
