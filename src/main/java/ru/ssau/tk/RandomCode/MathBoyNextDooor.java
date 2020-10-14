@@ -48,18 +48,6 @@ public abstract class MathBoyNextDooor implements MathFunction {
         return z;
     }
 
-    public double FunctionCos (double x){
-        return (Math.cos(x));
-    }
-
-    public double FunctionTan (double x){
-        return (Math.tan(x));
-    }
-
-    public double FunctionCot (double x){
-        return (Math.cos(x)/Math.sin(x));
-    }
-
     public double FunctionSum (double x, double y){
         return (x + y);
     }
