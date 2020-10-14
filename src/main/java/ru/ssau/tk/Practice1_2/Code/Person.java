@@ -34,7 +34,7 @@ public class Person {
         return firstName;
     }
 
-    public void setfirstName (String firstName){
+    public void setFirstName (String firstName){
         this.firstName = firstName;
     }
 
@@ -56,11 +56,11 @@ public class Person {
 
     public static void main(String[] args){
         Person person1 = new Person();
-        person1.setfirstName("Stas");
+        person1.setFirstName("Stas");
         person1.setlastName("Baretskiy");
         person1.setpassportId(1975);
         Person person2 = new Person();
-        person2.setfirstName("Boris");
+        person2.setFirstName("Boris");
         person2.setlastName("Jivotnoe");
         person2.setpassportId(69);
 

@@ -30,7 +30,7 @@ public class Person {
     }
 
 
-    public void setfirstName(String firstName) {
+    public void setFirstName(String firstName) {
 
         this.firstName = firstName;
 
