@@ -1,8 +1,6 @@
 package ru.ssau.tk.Practice1_4;
 import ru.ssau.tk.Practice1_3.Point;
 public class Points {
-    private static Point per1;
-    private static Point per2;
 
     private Points(){
 
