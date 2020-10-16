@@ -52,7 +52,7 @@ public abstract class MathBoyNextDooor implements MathFunction {
         return (x + y);
     }
 
-    public double FunctionMult (double x, double y){
+    public double FunctionMulty (double x, double y){
         return (x * y);
     }
 
