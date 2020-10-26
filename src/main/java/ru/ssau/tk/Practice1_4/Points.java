@@ -24,4 +24,10 @@ public class Points {
     public static Point enlarge(Point per,double c){
         return new Point(per.x*c,per.y*c,per.z*c);
     }
+    static Point opposite(Point per){
+        return new Point(per.x*-1,per.y*-1,per.z*-1);
+    }
+    static Point inverse(Point per){
+        return new Point(1/per.x, 1/per.y, 1/per.z);
+    }
 }
