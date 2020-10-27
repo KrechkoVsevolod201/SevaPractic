@@ -30,4 +30,12 @@ public class Points {
     static Point inverse(Point per){
         return new Point(1/per.x, 1/per.y, 1/per.z);
     }
+    public static double scalarProduct(Point per1, Point per2) {
+        return per1.x * per2.x + per1.y * per2.y + per1.z * per2.z;
+    }
+
+    public static Point vectorProduct(Point per1, Point per2) {
+        return new Point(per1.y * per2.z - per1.z * per2.y, per1.z * per2.x - per1.x * per2.z, per1.x * per2.y - per1.y * per2.x);
+    }
 }
+
