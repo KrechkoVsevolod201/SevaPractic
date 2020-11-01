@@ -1,4 +1,5 @@
 package ru.ssau.tk.Practice1_2.Code;
+
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -6,7 +7,7 @@ import static org.testng.Assert.*;
 public class PersonTest {
 
     @Test
-    public void testFirstName(){
+    public void testFirstName() {
         Person somePerson = new Person();
         somePerson.setFirstName("Seva");
         assertEquals(somePerson.getfirstName(), "Seva");
@@ -18,7 +19,7 @@ public class PersonTest {
     }
 
     @Test
-    public void testLastName(){
+    public void testLastName() {
         Person somePerson = new Person();
         somePerson.setlastName("Krechko");
         assertEquals(somePerson.getlastName(), "Krechko");
@@ -30,7 +31,7 @@ public class PersonTest {
     }
 
     @Test
-    public void testPassportId(){
+    public void testPassportId() {
         Person somePerson = new Person();
         somePerson.setpassportId(5858);
         assertEquals(somePerson.getpassportId(), 5858);
