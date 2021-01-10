@@ -1,6 +1,6 @@
 package ru.ssau.tk.Practice5_1;
 
-public class Settlement extends Location{
+public class Settlement extends Location {
     private int settlement;
     private SettlementType type;
 

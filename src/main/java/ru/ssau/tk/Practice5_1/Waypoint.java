@@ -1,6 +1,6 @@
 package ru.ssau.tk.Practice5_1;
 
-public class Waypoint extends Location{
+public class Waypoint extends Location {
     private WaypointType type;
     private Settlement settlement;
 
