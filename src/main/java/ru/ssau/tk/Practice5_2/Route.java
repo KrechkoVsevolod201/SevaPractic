@@ -3,9 +3,10 @@ package ru.ssau.tk.Practice5_2;
 import ru.ssau.tk.Practice5_1.Location;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Route {
-    private ArrayList<Location> locations = new ArrayList<>();
+public class Route implements Iterable<Location>{
+    private ArrayList<Location> locations=new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
         return locations;
@@ -21,5 +22,18 @@ public class Route {
 
     public void deleteLocation(int index){
         this.locations.remove(index);
+    }
+
+    public Location getFirstLocation(){
+        return locations.get(0);
+    }
+
+    public Location getLastLocation(){
+        return locations.get(locations.size()-1);
+    }
+
+    @Override
+    public Iterator<Location> iterator() {
+        return locations.iterator();
     }
 }
