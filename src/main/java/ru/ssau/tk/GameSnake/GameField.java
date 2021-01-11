@@ -1,12 +1,15 @@
 package ru.ssau.tk.GameSnake;
 
 import javax.swing.*;
+import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
+
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class GameField extends JPanel implements ActionListener{
     private final int SIZE_X = 1400;
@@ -27,10 +30,11 @@ public class GameField extends JPanel implements ActionListener{
     private boolean up = false;
     private boolean down = false;
     private boolean inGame = true;
+    public final JButton restart = new JButton("Restart");
 
 
     public GameField(){
-        setBackground(Color.black);
+        setBackground(Color.DARK_GRAY);
         loadImages();
         initGame();
         addKeyListener(new FieldKeyListener());
@@ -50,8 +54,8 @@ public class GameField extends JPanel implements ActionListener{
     }
 
     public void createApple(){
-        appleX = new Random().nextInt(20)*DOT_SIZE;
-        appleY = new Random().nextInt(20)*DOT_SIZE;
+        appleX = new Random().nextInt(24)*DOT_SIZE;
+        appleY = new Random().nextInt(17)*DOT_SIZE;
     }
 
     public void loadImages(){
@@ -77,6 +81,7 @@ public class GameField extends JPanel implements ActionListener{
             g.drawString(str,SIZE_X/2,SIZE_Y/2);
         }
     }
+
 
     public void move(){
         for (int i = dots; i > 0; i--) {
@@ -112,13 +117,13 @@ public class GameField extends JPanel implements ActionListener{
         if(x[0]>SIZE_X){
             inGame = false;
         }
-        if(x[0]<0){
+        if(x[0]<20){
             inGame = false;
         }
-        if(y[0]>SIZE_Y){
+        if(y[0]>SIZE_Y - 100){
             inGame = false;
         }
-        if(y[0]<0){
+        if(y[0]<50){
             inGame = false;
         }
     }
@@ -129,10 +134,24 @@ public class GameField extends JPanel implements ActionListener{
             checkApple();
             checkCollisions();
             move();
-
+            repaint();
+        }else {
+        if(inGame == false) {
+            timer.stop();
+            JDialog dialog = new JDialog();
+            dialog.setBounds(400, 400, 300, 200);
+            dialog.setBackground(Color.DARK_GRAY);
+            dialog.setLayout(new FlowLayout());
+            ActionListener actionListener = new TestActionListener(); // создаём создаём действие
+            // назначаем этот обработчик кнопке
+            restart.addActionListener(actionListener);
+            restart.setBackground(Color.white);
+            dialog.add(restart);
+            dialog.setVisible(true);
+            }
         }
-        repaint();
     }
+
 
     class FieldKeyListener extends KeyAdapter{
         @Override
@@ -162,4 +181,11 @@ public class GameField extends JPanel implements ActionListener{
             }
         }
     }
+
+    class TestActionListener implements ActionListener { // наследуемся от стандартного класса  ActionListener
+        public void actionPerformed(ActionEvent e) {
+            new MainWindow();
+        }
+    }
+
 }
