@@ -3,11 +3,9 @@ package ru.ssau.tk.GameSnake;
 import javax.swing.*;
 import javax.swing.event.AncestorListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.Random;
+
 
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
@@ -39,7 +37,6 @@ public class GameField extends JPanel implements ActionListener{
         initGame();
         addKeyListener(new FieldKeyListener());
         setFocusable(true);
-
     }
 
     public void initGame(){
@@ -54,8 +51,8 @@ public class GameField extends JPanel implements ActionListener{
     }
 
     public void createApple(){
-        appleX = new Random().nextInt(24)*DOT_SIZE;
-        appleY = new Random().nextInt(17)*DOT_SIZE;
+        appleX = new Random().nextInt(22)*DOT_SIZE;
+        appleY = new Random().nextInt(15)*DOT_SIZE;
     }
 
     public void loadImages(){
@@ -151,6 +148,7 @@ public class GameField extends JPanel implements ActionListener{
             }
         }
     }
+
 
 
     class FieldKeyListener extends KeyAdapter{
