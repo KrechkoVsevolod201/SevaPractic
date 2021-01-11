@@ -1,13 +1,9 @@
 package ru.ssau.tk.GameSnake;
 
 import javax.swing.*;
-import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-
-
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class GameField extends JPanel implements ActionListener{
     private final int SIZE_X = 1400;
@@ -182,7 +178,7 @@ public class GameField extends JPanel implements ActionListener{
 
     class TestActionListener implements ActionListener { // наследуемся от стандартного класса  ActionListener
         public void actionPerformed(ActionEvent e) {
-            new MainWindow();
+            new GameWindow();
         }
     }
 
