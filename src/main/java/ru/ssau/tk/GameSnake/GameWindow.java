@@ -12,11 +12,4 @@ public class GameWindow extends JFrame {
         setVisible(true);
 
     }
-
-
-
-    public static void main(String[] args){
-        GameWindow start = new GameWindow();
-        Sound.playSound("Images/Music.wav").join();
-    }
 }
