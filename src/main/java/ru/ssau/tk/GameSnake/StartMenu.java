@@ -39,8 +39,8 @@ public class StartMenu extends JFrame
         // Кнопка со значками на все случаи жизни
         JButton button1 = new JButton();
         button1.setIcon        (new ImageIcon("images/Snake.png"));
-        button1.setRolloverIcon(new ImageIcon("images/Snake.png" ));
-        button1.setPressedIcon (new ImageIcon("images/Snake.png"));
+        button1.setRolloverIcon(new ImageIcon("images/Snake2.png" ));
+        button1.setPressedIcon (new ImageIcon("images/Ahegao.png"));
         button1.setDisabledIcon(new ImageIcon("images/Snake.png"));
         // Убираем все ненужные рамки и закраску
         button1.setBorderPainted(false);

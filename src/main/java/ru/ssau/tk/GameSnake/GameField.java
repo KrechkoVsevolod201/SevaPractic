@@ -16,10 +16,9 @@ public class GameField extends JPanel implements ActionListener {
     private Image topLine;
     private int BeerX;
     private int BeerY;
-    private int TopLineX;
-    private int TopLineY;
-    private int[] x = new int[ALL_DOTS_X * 17];
-    private int[] y = new int[ALL_DOTS_Y * 24];
+    private int[] TopLineX = new int[10];
+    private int[] x = new int[ALL_DOTS_X * 28];
+    private int[] y = new int[ALL_DOTS_Y * 17];
     private int dots;
     private Timer timer;
     private boolean left = false;
@@ -28,8 +27,10 @@ public class GameField extends JPanel implements ActionListener {
     private boolean down = false;
     private boolean inGame = true;
     public final JButton restart = new JButton("Restart");
-    Font font = new Font("Verdana", Font.PLAIN, 28);
-
+    private Font font = new Font("Verdana", Font.PLAIN, 28);
+    private String points;
+    private int point = 0;
+    private final int TopLineY = 0 * DOT_SIZE;
 
     public GameField() {
         setBackground(Color.DARK_GRAY);
@@ -45,15 +46,15 @@ public class GameField extends JPanel implements ActionListener {
             x[i] = 50 - i * DOT_SIZE;
             y[i] = 50;
         }
-        timer = new Timer(250, this);
+        timer = new Timer(200, this);
         timer.start();
         createApple();
     }
 
     public void createTopLine(){
-        TopLineX = 10 * DOT_SIZE;
-        TopLineY = 10 * DOT_SIZE;
     }
+
+
 
     public void createApple() {
         int minX = 1;
@@ -71,7 +72,7 @@ public class GameField extends JPanel implements ActionListener {
     public void loadImages() {
         ImageIcon iia = new ImageIcon("Images/Beer.png");
         Beer = iia.getImage();
-        ImageIcon iid = new ImageIcon("Images/Snake.png");
+        ImageIcon iid = new ImageIcon("Images/Snake2.png");
         dot = iid.getImage();
         ImageIcon TopLine = new ImageIcon("Images/TopLine.png");
         topLine = TopLine.getImage();
@@ -82,7 +83,107 @@ public class GameField extends JPanel implements ActionListener {
         super.paintComponent(g);
         if (inGame) {
             g.drawImage(Beer, BeerX, BeerY, this);
-            g.drawImage(topLine, TopLineX, TopLineY, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 1 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 2 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 3 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 4 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 5 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 6 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 7 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 8 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 9 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 10 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 11 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 12 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 13 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 14 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 15 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 16 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 17 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 18 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 19 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 20 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 21 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 22 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 23 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 24 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 25 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 26 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 27 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 28 * DOT_SIZE, TopLineY, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, TopLineY, this);
+
+            g.drawImage(Beer, BeerX, BeerY, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 750, this);
+            g.drawImage(topLine, 1 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 2 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 3 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 4 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 5 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 6 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 7 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 8 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 9 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 10 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 11 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 12 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 13 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 14 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 15 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 16 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 17 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 18 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 19 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 20 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 21 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 22 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 23 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 24 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 25 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 26 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 27 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 28 * DOT_SIZE, 800, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 800, this);
+
+            g.drawImage(topLine, 0 * DOT_SIZE, 0 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 1 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 2 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 3 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 4 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 5 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 6 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 7 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 8 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 9 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 10 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 11 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 12 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 13* DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 14* DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 15* DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 16* DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 17* DOT_SIZE, this);
+
+            g.drawImage(topLine, 29 * DOT_SIZE, 0 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 1 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 2 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 3 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 4 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 5 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 6 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 7 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 8 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 9 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 10 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 11 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 12 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 13* DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 14* DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 15* DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 16* DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 17* DOT_SIZE, this);
+
             for (int i = 0; i < dots; i++) {
                 g.drawImage(dot, x[i], y[i], this);
             }
@@ -116,6 +217,8 @@ public class GameField extends JPanel implements ActionListener {
     public void checkApple() {
         if (x[0] == BeerX && y[0] == BeerY) {
             dots++;
+            points = Integer.toString(point);
+            point++;
             createApple();
         }
     }
@@ -130,7 +233,7 @@ public class GameField extends JPanel implements ActionListener {
         if (x[0] > SIZE_X) {
             inGame = false;
         }
-        if (x[0] < 20) {
+        if (x[0] < 0) {
             inGame = false;
         }
         if (y[0] > SIZE_Y - 100) {
@@ -144,9 +247,9 @@ public class GameField extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (inGame) {
-            createTopLine();
             checkApple();
             checkCollisions();
+            createTopLine();
             move();
             repaint();
         } else {
