@@ -159,11 +159,11 @@ public class GameField extends JPanel implements ActionListener {
             g.drawImage(topLine, 0 * DOT_SIZE, 10 * DOT_SIZE, this);
             g.drawImage(topLine, 0 * DOT_SIZE, 11 * DOT_SIZE, this);
             g.drawImage(topLine, 0 * DOT_SIZE, 12 * DOT_SIZE, this);
-            g.drawImage(topLine, 0 * DOT_SIZE, 13* DOT_SIZE, this);
-            g.drawImage(topLine, 0 * DOT_SIZE, 14* DOT_SIZE, this);
-            g.drawImage(topLine, 0 * DOT_SIZE, 15* DOT_SIZE, this);
-            g.drawImage(topLine, 0 * DOT_SIZE, 16* DOT_SIZE, this);
-            g.drawImage(topLine, 0 * DOT_SIZE, 17* DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 13 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 14 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 15 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 16 * DOT_SIZE, this);
+            g.drawImage(topLine, 0 * DOT_SIZE, 17 * DOT_SIZE, this);
 
             g.drawImage(topLine, 29 * DOT_SIZE, 0 * DOT_SIZE, this);
             g.drawImage(topLine, 29 * DOT_SIZE, 1 * DOT_SIZE, this);
@@ -178,11 +178,11 @@ public class GameField extends JPanel implements ActionListener {
             g.drawImage(topLine, 29 * DOT_SIZE, 10 * DOT_SIZE, this);
             g.drawImage(topLine, 29 * DOT_SIZE, 11 * DOT_SIZE, this);
             g.drawImage(topLine, 29 * DOT_SIZE, 12 * DOT_SIZE, this);
-            g.drawImage(topLine, 29 * DOT_SIZE, 13* DOT_SIZE, this);
-            g.drawImage(topLine, 29 * DOT_SIZE, 14* DOT_SIZE, this);
-            g.drawImage(topLine, 29 * DOT_SIZE, 15* DOT_SIZE, this);
-            g.drawImage(topLine, 29 * DOT_SIZE, 16* DOT_SIZE, this);
-            g.drawImage(topLine, 29 * DOT_SIZE, 17* DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 13 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 14 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 15 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 16 * DOT_SIZE, this);
+            g.drawImage(topLine, 29 * DOT_SIZE, 17 * DOT_SIZE, this);
 
             for (int i = 0; i < dots; i++) {
                 g.drawImage(dot, x[i], y[i], this);
@@ -219,6 +219,7 @@ public class GameField extends JPanel implements ActionListener {
             dots++;
             points = Integer.toString(point);
             point++;
+            Sound.playSound("Images/Отрыжка.wav");
             createApple();
         }
     }
