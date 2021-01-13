@@ -16,6 +16,8 @@ public class GameField extends JPanel implements ActionListener {
     private Image topLine;
     private int BeerX;
     private int BeerY;
+    private int TopLineX;
+    private int TopLineY;
     private int[] x = new int[ALL_DOTS_X * 17];
     private int[] y = new int[ALL_DOTS_Y * 24];
     private int dots;
@@ -48,15 +50,22 @@ public class GameField extends JPanel implements ActionListener {
         createApple();
     }
 
+    public void createTopLine(){
+        TopLineX = 10 * DOT_SIZE;
+        TopLineY = 10 * DOT_SIZE;
+    }
+
     public void createApple() {
         int minX = 1;
         int maxX = 27;
         int diffX = maxX - minX;
-        int minY = 1;
         int maxY = 16;
+        int minY = 1;
         int diffY = maxY - minY;
-        BeerX = new Random().nextInt(diffX) * DOT_SIZE;
-        BeerY = new Random().nextInt(diffY) * DOT_SIZE;
+        BeerX = new Random().nextInt(diffX) + minX;
+        BeerX = BeerX * DOT_SIZE;
+        BeerY = new Random().nextInt(diffY) + minX;
+        BeerY = BeerY * DOT_SIZE;
     }
 
     public void loadImages() {
@@ -73,6 +82,7 @@ public class GameField extends JPanel implements ActionListener {
         super.paintComponent(g);
         if (inGame) {
             g.drawImage(Beer, BeerX, BeerY, this);
+            g.drawImage(topLine, TopLineX, TopLineY, this);
             for (int i = 0; i < dots; i++) {
                 g.drawImage(dot, x[i], y[i], this);
             }
@@ -134,6 +144,7 @@ public class GameField extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (inGame) {
+            createTopLine();
             checkApple();
             checkCollisions();
             move();
