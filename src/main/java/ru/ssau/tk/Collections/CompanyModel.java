@@ -10,6 +10,7 @@ public class CompanyModel {
     private final Map<Driver, Route> driverRouteMap;
     private int maxId = 0;
 
+
     public CompanyModel() {
         allLocations = new LinkedHashSet<>();
         allRoutes = new LinkedHashSet<>();
@@ -21,10 +22,6 @@ public class CompanyModel {
         return allLocations;
     }
 
-    public Map<Driver, Route> getDriverRouteMap() {
-        return driverRouteMap;
-    }
-
     public Collection<Route> getAllRoutes() {
         return allRoutes;
     }
@@ -32,6 +29,11 @@ public class CompanyModel {
     public Collection<Driver> getAllDrivers() {
         return allDrivers;
     }
+
+    public Map<Driver, Route> getDriverRouteMap() {
+        return driverRouteMap;
+    }
+
     public Settlement addSettlement(String name, double latitude, double longitude, SettlementType type, int population) {
         Settlement settlement = new Settlement();
 
@@ -86,7 +88,12 @@ public class CompanyModel {
 
         return route;
     }
+
     public void assignRoute(Driver driver, Route route) {
         driverRouteMap.put(driver, route);
+    }
+
+    public static void sort(List<Settlement> settlements, Comparator<? super Settlement> comparator) {
+        settlements.sort(comparator);
     }
 }
