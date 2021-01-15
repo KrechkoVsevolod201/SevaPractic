@@ -2,8 +2,8 @@ package ru.ssau.tk.Collections;
 
 import java.util.*;
 
-public class Route implements Iterable<Location>{
-    private ArrayList<Location> locations = new ArrayList<>();
+public final class Route implements Iterable<Location> {
+    private final ArrayList<Location> locations = new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
         return locations;
@@ -64,7 +64,6 @@ public class Route implements Iterable<Location>{
         }
     }
 
-
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -89,5 +88,22 @@ public class Route implements Iterable<Location>{
     @Override
     public int hashCode() {
         return Objects.hash(locations);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Location location : locations) {
+            if (location.getClass() == Settlement.class) {
+                Settlement settlement = (Settlement) location;
+                stringBuilder.append(settlement.toString());
+            }
+            if (location.getClass() == Waypoint.class) {
+                Waypoint waypoint = (Waypoint) location;
+                stringBuilder.append(waypoint.toString());
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
     }
 }
