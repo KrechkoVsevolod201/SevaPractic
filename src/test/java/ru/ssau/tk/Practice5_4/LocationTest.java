@@ -3,8 +3,6 @@ package ru.ssau.tk.Practice5_4;
 import org.testng.annotations.Test;
 import ru.ssau.tk.Collections.*;
 
-import org.testng.annotations.Test;
-
 import static org.testng.Assert.*;
 
 public class LocationTest {

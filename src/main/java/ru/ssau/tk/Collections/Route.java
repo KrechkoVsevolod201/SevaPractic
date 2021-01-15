@@ -1,7 +1,5 @@
 package ru.ssau.tk.Collections;
 
-import ru.ssau.tk.Collections.Location;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

@@ -1,10 +1,11 @@
 package ru.ssau.tk.Practice5_2;
 
 import org.testng.annotations.Test;
-import ru.ssau.tk.Collections.Route;
 import ru.ssau.tk.Collections.Location;
+import ru.ssau.tk.Collections.Route;
 import ru.ssau.tk.Collections.Settlement;
 import ru.ssau.tk.Collections.Waypoint;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
