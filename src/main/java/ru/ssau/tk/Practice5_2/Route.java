@@ -1,12 +1,12 @@
 package ru.ssau.tk.Practice5_2;
 
 import ru.ssau.tk.Practice5_1.Location;
-
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Route implements Iterable<Location>{
-    private ArrayList<Location> locations=new ArrayList<>();
+    private ArrayList<Location> locations = new ArrayList<>();
 
     public ArrayList<Location> getLocation() {
         return locations;
@@ -20,7 +20,7 @@ public class Route implements Iterable<Location>{
         this.locations.add(index,location);
     }
 
-    public void deleteLocation(int index){
+    public void removeLocation(int index){
         this.locations.remove(index);
     }
 
@@ -34,6 +34,24 @@ public class Route implements Iterable<Location>{
 
     @Override
     public Iterator<Location> iterator() {
-        return locations.iterator();
+        return new Iterator<>() {
+            private Location location = getFirstLocation();
+            private int count = 0;
+
+            @Override
+            public boolean hasNext() {
+                return count < getLocation().size();
+            }
+
+            @Override
+            public Location next() {
+                if (!(hasNext())){
+                    throw new NoSuchElementException();
+                } else {
+                    location = locations.get(count++);
+                    return location;
+                }
+            }
+        };
     }
 }
