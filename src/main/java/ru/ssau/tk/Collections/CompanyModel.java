@@ -1,24 +1,28 @@
 package ru.ssau.tk.Collections;
 
-
 import ru.ssau.tk.Practice1_17.Gender;
-
 import java.util.*;
 
 public class CompanyModel {
     private final Collection<Location> allLocations;
     private final Collection<Route> allRoutes;
     private final Collection<Driver> allDrivers;
+    private final Map<Driver, Route> driverRouteMap;
     private int maxId = 0;
 
     public CompanyModel() {
         allLocations = new LinkedHashSet<>();
         allRoutes = new LinkedHashSet<>();
         allDrivers = new LinkedHashSet<>();
+        driverRouteMap = new LinkedHashMap<>();
     }
 
     public Collection<Location> getAllLocations() {
         return allLocations;
+    }
+
+    public Map<Driver, Route> getDriverRouteMap() {
+        return driverRouteMap;
     }
 
     public Collection<Route> getAllRoutes() {
@@ -81,5 +85,8 @@ public class CompanyModel {
         allRoutes.add(route);
 
         return route;
+    }
+    public void assignRoute(Driver driver, Route route) {
+        driverRouteMap.put(driver, route);
     }
 }
