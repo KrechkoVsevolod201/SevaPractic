@@ -1,7 +1,6 @@
 package ru.ssau.tk.Collections;
 
 import java.util.*;
-
 public final class Route implements Iterable<Location>, Comparable<Route> {
     private final ArrayList<Location> locations = new ArrayList<>();
 
@@ -51,6 +50,7 @@ public final class Route implements Iterable<Location>, Comparable<Route> {
             }
         };
     }
+
     public void remove(Location location) {
         int index = 0;
 
@@ -121,6 +121,6 @@ public final class Route implements Iterable<Location>, Comparable<Route> {
 
     @Override
     public int compareTo(Route anotherRoute) {
-        return Double.compare(this.length(), anotherRoute.length());
+        return RouteLengthComparator.compare(this, anotherRoute);
     }
 }
