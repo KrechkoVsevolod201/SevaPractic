@@ -71,6 +71,7 @@ public class RouteTest {
         route.removeLocation(1);
         assertEquals(route.getLocation(), locations3);
     }
+
     @Test
     public void testIterator() {
         Route route = new Route();
@@ -89,6 +90,7 @@ public class RouteTest {
         }
         assertEquals(count, 3);
     }
+
     @Test
     public void testRemove() {
         List<Location> locations4 = new ArrayList<>();
@@ -130,11 +132,12 @@ public class RouteTest {
         assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location0, location1, location2)));
 
         route2.remove(location4);
-        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location0 , location1, location2)));
+        assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location0, location1, location2)));
 
         route2.remove(location1);
         assertEquals(route2.getLocation(), new ArrayList<>(Arrays.asList(location0, location2)));
     }
+
     @Test
     public void testEquals() {
         Route route1 = new Route();
@@ -153,7 +156,7 @@ public class RouteTest {
         Location warehouse3 = new Waypoint();
         Location warehouse4 = new Waypoint();
 
-        Point point = new Point(1,2,3);
+        Point point = new Point(1, 2, 3);
 
         city1.setId(1);
         city2.setId(2);
