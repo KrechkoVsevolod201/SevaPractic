@@ -1,6 +1,7 @@
-package ru.ssau.tk.Practice5_2;
+package ru.ssau.tk.Collections;
 
-import ru.ssau.tk.Practice5_1.Location;
+import ru.ssau.tk.Collections.Location;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -53,5 +54,17 @@ public class Route implements Iterable<Location>{
                 }
             }
         };
+    }
+    public void remove(Location location) {
+        int index = 0;
+
+        for (Location currentLocation : this.locations) {
+            if (currentLocation.equals(location)) {
+                removeLocation(index);
+                return;
+            }
+
+            index++;
+        }
     }
 }

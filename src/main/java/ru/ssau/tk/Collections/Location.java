@@ -1,4 +1,4 @@
-package ru.ssau.tk.Practice5_4;
+package ru.ssau.tk.Collections;
 
 import java.util.Objects;
 

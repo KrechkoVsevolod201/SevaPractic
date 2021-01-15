@@ -1,9 +1,9 @@
 package ru.ssau.tk.Practice5_4;
 
 import org.testng.annotations.Test;
-import ru.ssau.tk.Practice5_1.Location;
-import ru.ssau.tk.Practice5_1.Settlement;
-import ru.ssau.tk.Practice5_1.Waypoint;
+import ru.ssau.tk.Collections.*;
+
+import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
@@ -26,13 +26,13 @@ public class LocationTest {
 
         warehouse.setId(31);
 
-        city.setType(Location.SettlementType.CITY);
+        city.setType(SettlementType.CITY);
 
-        village1.setType(Location.SettlementType.VILLAGE);
-        village2.setType(Location.SettlementType.VILLAGE);
-        village3.setType(Location.SettlementType.VILLAGE);
+        village1.setType(SettlementType.VILLAGE);
+        village2.setType(SettlementType.VILLAGE);
+        village3.setType(SettlementType.VILLAGE);
 
-        warehouse.setType(Location.WaypointType.WAREHOUSE);
+        warehouse.setType(WaypointType.WAREHOUSE);
 
         assertTrue(village0.equals(village3));
         assertTrue(village3.equals(village0));

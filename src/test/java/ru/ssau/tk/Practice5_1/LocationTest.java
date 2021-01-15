@@ -1,6 +1,7 @@
 package ru.ssau.tk.Practice5_1;
 
 import org.testng.annotations.Test;
+import ru.ssau.tk.Collections.Location;
 
 import static org.testng.Assert.*;
 

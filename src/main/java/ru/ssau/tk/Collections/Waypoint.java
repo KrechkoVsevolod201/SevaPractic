@@ -1,22 +1,26 @@
-package ru.ssau.tk.Practice5_1;
+package ru.ssau.tk.Collections;
 
 public class Waypoint extends Location {
     private WaypointType type;
     private Settlement settlement;
 
-    public Settlement getSettlement() {
-        return settlement;
+    public Waypoint() {
+
     }
 
     public WaypointType getType() {
         return type;
     }
 
-    public void setSettlement(Settlement settlement) {
-        this.settlement = settlement;
-    }
-
     public void setType(WaypointType type) {
         this.type = type;
+    }
+
+    public Settlement getSettlement() {
+        return settlement;
+    }
+
+    public void setSettlement(Settlement settlement) {
+        this.settlement = settlement;
     }
 }

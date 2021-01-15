@@ -1,11 +1,22 @@
-package ru.ssau.tk.Practice5_1;
+package ru.ssau.tk.Collections;
+
+import ru.ssau.tk.Collections.Location;
+
 
 public class Settlement extends Location {
     private int settlement;
     private SettlementType type;
 
+    public Settlement() {
+
+    }
+
     public int getSettlement() {
         return settlement;
+    }
+
+    public void setSettlement(int settlement) {
+        this.settlement = settlement;
     }
 
     public SettlementType getType() {
@@ -14,9 +25,5 @@ public class Settlement extends Location {
 
     public void setType(SettlementType type) {
         this.type = type;
-    }
-
-    public void setSettlement(int settlement) {
-        this.settlement = settlement;
     }
 }
