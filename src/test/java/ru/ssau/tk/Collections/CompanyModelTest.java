@@ -60,11 +60,11 @@ public class CompanyModelTest {
                 WaypointType.DEPOT, null);
         waypoint4 = companyModelOne.addWaypoint("city2.Warehouse", 21.87, 45.84,
                 WaypointType.WAREHOUSE, city2);
-        driver1 = companyModelOne.addDriver("David", Gender.MALE, new Date(121, Calendar.APRIL, 21));
-        driver2 = companyModelOne.addDriver("Andrey", Gender.FEMALE, new Date(127, Calendar.DECEMBER, 5));
-        driver3 = companyModelOne.addDriver("DungeonMaster", Gender.FEMALE, new Date(135, Calendar.AUGUST, 16));
-        driver4 = companyModelOne.addDriver("Rick", Gender.MALE, new Date(140, Calendar.JANUARY, 2));
-        driver7 = companyModelOne.addDriver("Nikitos", Gender.MALE, new Date(129, Calendar.FEBRUARY, 28));
+        driver1 = companyModelOne.addDriver("Bob", Gender.MALE, new Date(121, Calendar.APRIL, 21));
+        driver2 = companyModelOne.addDriver("Alice", Gender.FEMALE, new Date(127, Calendar.DECEMBER, 5));
+        driver3 = companyModelOne.addDriver("Eve", Gender.FEMALE, new Date(135, Calendar.AUGUST, 16));
+        driver4 = companyModelOne.addDriver("Charlie", Gender.MALE, new Date(140, Calendar.JANUARY, 2));
+        driver7 = companyModelOne.addDriver("Dave", Gender.MALE, new Date(129, Calendar.FEBRUARY, 28));
         route1 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(waypoint3, city1, waypoint2,
                 waypoint1, waypoint4, waypoint5)));
         route2 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(waypoint3, city1, city2, waypoint4,
@@ -100,8 +100,8 @@ public class CompanyModelTest {
                 WaypointType.WAREHOUSE, southCity);
         waypoint10 = companyModelTwo.addWaypoint("south village.Waypoint", -13.1,
                 43.04, WaypointType.EMPTY, southVillage);
-        driver5 = companyModelTwo.addDriver("BoyNextDoor", Gender.MALE, new Date(123, Calendar.MAY, 6));
-        driver6 = companyModelTwo.addDriver("Seva", Gender.FEMALE, new Date(129, Calendar.OCTOBER, 28));
+        driver5 = companyModelTwo.addDriver("Chuck", Gender.MALE, new Date(123, Calendar.MAY, 6));
+        driver6 = companyModelTwo.addDriver("Carol", Gender.FEMALE, new Date(129, Calendar.OCTOBER, 28));
         route4 = companyModelTwo.addRoute(new ArrayList<>(Arrays.asList(waypoint3, city1, village1, village2,
                 city2, waypoint5)));
         route5 = companyModelTwo.addRoute(new ArrayList<>(Arrays.asList(waypoint5, village1, city2, city1, waypoint3)));
@@ -300,5 +300,37 @@ public class CompanyModelTest {
         assertEquals(mapTwo.get(driver5), route4);
         assertEquals(mapTwo.get(driver6), route5);
         assertNotEquals(mapOne.get(driver7), route6);
+    }
+
+    @Test
+    public void testRouteComparator() {
+        CompanyModel companyModelOne = new CompanyModel();
+        CompanyModel companyModelTwo = new CompanyModel();
+
+        fillModels(companyModelOne, companyModelTwo);
+
+        List<Route> routes = new ArrayList<>(Arrays.asList(route1, route2, route3, route4, route5));
+
+        Collections.sort(routes);
+
+        assertEquals(Collections.min(routes), route3);
+        assertEquals(Collections.max(routes), route4);
+        assertEquals(routes, new ArrayList<>(Arrays.asList(route3, route2, route5, route1, route4)));
+    }
+
+    @Test
+    public void testLocationComparator() {
+        CompanyModel companyModelOne = new CompanyModel();
+        CompanyModel companyModelTwo = new CompanyModel();
+
+        fillModels(companyModelOne, companyModelTwo);
+
+        List<Location> locations = new ArrayList<>(Arrays.asList(village1, village2, city1, city2, waypoint1,
+                waypoint2, waypoint3, waypoint4, waypoint5));
+        assertEquals(Collections.max(locations), city2);
+        assertEquals(Collections.min(locations), village1);
+        Collections.sort(locations);
+        assertEquals(locations, new ArrayList<>(Arrays.asList(village1, waypoint1, waypoint2, village2,
+                city1, waypoint3, waypoint5, city2, waypoint4)));
     }
 }
